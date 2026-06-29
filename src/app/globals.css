@@ -22,6 +22,7 @@
 
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-nav: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-nunito: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
 
   --container-max: 1440px;
 }
