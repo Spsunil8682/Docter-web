@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { dmSans, poppins } from "@/lib/fonts";
+import { dmSans, nunito, poppins } from "@/lib/fonts";
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -30,7 +30,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={cn(dmSans.variable, poppins.variable)}>
+    <html
+      lang="en"
+      className={cn(dmSans.variable, poppins.variable, nunito.variable)}
+    >
       <body>
         <a
           href="#main"

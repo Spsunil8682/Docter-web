@@ -3,6 +3,7 @@ import { Header } from "@/components/layout/Header";
 import { Hero } from "@/components/sections/Hero";
 import { Featured } from "@/components/sections/Featured";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
+import { Onboarding } from "@/components/sections/Onboarding";
 
 export default function HomePage() {
   return (
@@ -13,6 +14,7 @@ export default function HomePage() {
         <Hero />
         <Featured />
         <WhyChooseUs />
+        <Onboarding />
       </main>
     </>
   );
