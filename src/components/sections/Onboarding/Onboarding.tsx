@@ -9,27 +9,41 @@ import { cn } from "@/lib/utils";
 interface Step {
   title: string;
   description: string;
+  /** Illustration shown on the right when this step is active. */
+  image: string;
+  alt: string;
 }
 
+// TODO: replace the `image` for steps 2–4 with the real per-step assets
+// (drop them in /public/images/onboarding/). Currently all point at the
+// existing hero image so the section renders.
 const STEPS: readonly Step[] = [
   {
     title: "Step 1: Get your referral code",
     description: "Contact us to receive your unique referral code.",
+    image: "/images/onboarding/hero-phone.webp",
+    alt: "Become an Amrutam doctor onboarding form with name, contact, email and message fields",
   },
   {
     title: "Step 2: Register on Amrutam",
     description:
       "Sign up on the Amrutam Doctors app or website to join our specialist network.",
+    image: "/images/onboarding/hero-phone.webp",
+    alt: "Register on the Amrutam Doctors app or website",
   },
   {
     title: "Step 3: Complete KYC",
     description:
       "Fill in your details and upload the required documents for verification.",
+    image: "/images/onboarding/hero-phone.webp",
+    alt: "Complete KYC by uploading the required verification documents",
   },
   {
     title: "Step 4: Start consulting",
     description:
       "Once verified, begin offering consultations and helping patients.",
+    image: "/images/onboarding/hero-phone.webp",
+    alt: "Start consulting and helping patients once verified",
   },
 ];
 
@@ -65,6 +79,9 @@ export function Onboarding() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = TABS[activeIndex] ?? TABS[0]!;
 
+  const [activeStep, setActiveStep] = useState(0);
+  const currentStep = STEPS[activeStep] ?? STEPS[0]!;
+
   return (
     <section id="onboarding" className="bg-cream-50 w-full py-12 lg:py-10">
       <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col gap-10 px-5 sm:px-8 lg:gap-[38px] lg:pl-[100px] lg:pr-0">
@@ -81,19 +98,32 @@ export function Onboarding() {
         {/* Steps + hero illustration */}
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-[minmax(0,578px)_minmax(0,1fr)] lg:gap-16">
           <ol className="flex flex-col gap-3">
-            {STEPS.map((step) => (
-              <li
-                key={step.title}
-                className="border-brand-dark/50 bg-cream-50 flex flex-col gap-2.5 rounded-lg border px-8 py-7"
-              >
-                <h3 className="text-brand font-sans text-xl font-bold">
-                  {step.title}
-                </h3>
-                <p className="text-brand font-sans text-sm">
-                  {step.description}
-                </p>
-              </li>
-            ))}
+            {STEPS.map((step, index) => {
+              const isActive = index === activeStep;
+              return (
+                <li key={step.title}>
+                  <button
+                    type="button"
+                    aria-pressed={isActive}
+                    onClick={() => setActiveStep(index)}
+                    className={cn(
+                      "flex w-full cursor-pointer flex-col gap-2.5 rounded-lg border px-8 py-7 text-left transition-colors duration-200",
+                      "focus-visible:ring-brand focus-visible:ring-2 focus-visible:outline-none",
+                      isActive
+                        ? "border-brand bg-brand/5"
+                        : "border-brand-dark/50 bg-cream-50 hover:bg-brand/5",
+                    )}
+                  >
+                    <h3 className="text-brand font-sans text-xl font-bold">
+                      {step.title}
+                    </h3>
+                    <p className="text-brand font-sans text-sm">
+                      {step.description}
+                    </p>
+                  </button>
+                </li>
+              );
+            })}
           </ol>
 
           <div className="relative mx-auto aspect-[645/400] w-full max-w-[645px]">
@@ -106,8 +136,9 @@ export function Onboarding() {
               className="absolute top-0 left-0 w-full"
             />
             <Image
-              src="/images/onboarding/hero-phone.webp"
-              alt="Become an Amurtam doctor onboarding form with name, contact, email and message fields"
+              key={currentStep.image}
+              src={currentStep.image}
+              alt={currentStep.alt}
               width={1117}
               height={637}
               className="absolute h-auto"
