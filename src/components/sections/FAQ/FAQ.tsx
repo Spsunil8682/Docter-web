@@ -65,9 +65,9 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="bg-cream-50 w-full py-8">
-      <div className="mx-auto flex w-full max-w-[1030px] flex-col items-center gap-12 px-5 sm:px-8">
-        <div className="flex max-w-[785px] flex-col items-center gap-2 text-center">
+    <section id="faq" className="bg-cream-50 w-full py-[33px]">
+      <div className="mx-auto flex w-full max-w-[1030px] flex-col items-center gap-12 px-5 sm:px-8 lg:px-0">
+        <div className="flex flex-col items-center gap-3 text-center">
           <h2
             className="text-brand-dark font-sans text-3xl font-bold tracking-[0.01em] lg:text-[40px]"
             style={{ textShadow: "0px 4px 36.2px rgba(18, 90, 140, 0.15)" }}
@@ -91,7 +91,7 @@ export function FAQ() {
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between gap-6 pb-[26px] text-left"
+                    className="flex w-full items-center justify-between gap-6 pb-[25px] text-left"
                   >
                     <span className="text-muted font-sans text-base leading-[26px] font-medium tracking-[0.01em] lg:text-xl">
                       {item.question}

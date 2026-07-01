@@ -25,7 +25,7 @@ const titleClass =
 export function Footer() {
   return (
     <footer className="bg-footer w-full">
-      <Container className="flex flex-col gap-12 pt-12 pb-12 lg:flex-row lg:justify-between lg:gap-8 lg:pt-[76px] lg:pb-16">
+      <Container className="flex flex-col gap-12 pt-12 pb-12 lg:flex-row lg:justify-between lg:gap-8 lg:pt-[76px] lg:pb-[50px]">
         {/* Get in touch */}
         <div className="flex flex-col">
           <Image
@@ -33,7 +33,7 @@ export function Footer() {
             alt="Amrutam"
             width={210}
             height={47}
-            className="h-auto w-[180px] lg:w-[210px]"
+            className="-ml-4 h-auto w-[180px] lg:w-[210px]"
           />
           <h2 className={`${titleClass} mt-10`}>Get in touch</h2>
           <div className="mt-6 flex max-w-[371px] flex-col gap-4">
@@ -56,7 +56,7 @@ export function Footer() {
         {/* Information */}
         <nav aria-label="Information" className="flex flex-col">
           <h2 className={titleClass}>Information</h2>
-          <ul className="mt-6 flex flex-col gap-3">
+          <ul className="mt-6 flex flex-col gap-3 leading-[1.31]">
             {INFORMATION_LINKS.map((link) => (
               <li key={link.label}>
                 <Link href={link.href} className={linkClass}>
@@ -80,7 +80,6 @@ export function Footer() {
         </div>
       </Container>
 
-      <div className="bg-brand-dark h-4 w-full" />
     </footer>
   );
 }

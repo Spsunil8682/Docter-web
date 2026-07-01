@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
-import { Container } from "@/components/layout/Container";
 
 interface Stat {
   value: string;
@@ -37,10 +36,10 @@ export function Hero() {
         className="pointer-events-none absolute top-7 -left-11 z-0 h-[420px] w-[420px] rounded-full bg-amber-100/70 blur-[140px] lg:h-[660px] lg:w-[660px] lg:blur-[160px]"
       />
 
-      <Container className="relative z-10 pt-8 pb-16 lg:pt-6 lg:pb-24">
+      <div className="relative z-10 mx-auto w-full max-w-[var(--container-max)] px-4 pt-8 pb-16 lg:pt-6 lg:pb-[64px] lg:pl-[99px] lg:pr-[66px]">
         <div className="flex flex-col items-center gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
-          <div className="w-full text-center lg:max-w-[715px] lg:flex-1 lg:text-left">
-            <div className="flex flex-col gap-3">
+          <div className="w-full text-center lg:max-w-[715px] lg:flex-1 lg:text-left lg:pt-[117.5px]">
+            <div className="flex flex-col gap-3 ">
               <p className="text-muted text-base font-medium">
                 Namaste, Welcome to Amrutam
               </p>
@@ -80,19 +79,19 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="w-full max-w-[569px] shrink-0">
+          <div className="w-full max-w-[569px] shrink-0 py-2 lg:py-6">
             <Image
               src="/images/hero-doctors.webp"
               alt="Ayurvedic doctors available for online consultation on Amrutam"
               width={569}
-              height={425}
+              height={440}
               priority
               sizes="(max-width: 1024px) 90vw, 569px"
-              className="h-auto w-full"
+              className="h-auto w-full lg:h-[440px] lg:w-[569px] lg:object-fit"
             />
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

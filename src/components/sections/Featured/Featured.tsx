@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Container } from "@/components/layout/Container";
 
 const LOGOS: ReadonlyArray<{
   src: string;
@@ -66,10 +65,10 @@ const LOGOS: ReadonlyArray<{
 export function Featured() {
   return (
     <section className="bg-cream-200 w-full">
-      <Container className="flex flex-col items-center gap-12 py-8">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col items-center gap-12 px-2 py-8 lg:px-[38px]">
         <div className="flex max-w-[785px] flex-col items-center gap-1 text-center">
           <h2 className="text-brand-dark font-sans text-3xl font-bold [text-shadow:0px_4px_36.2px_rgba(18,90,140,0.15)] lg:text-[40px]">
-            Featured In
+            Featured
           </h2>
           <p className="text-muted-2 font-sans text-lg leading-[1.5] lg:text-xl">
             Recognized and celebrated by leading publications &ndash; Amrutam in
@@ -93,7 +92,7 @@ export function Featured() {
             </li>
           ))}
         </ul>
-      </Container>
+      </div>
     </section>
   );
 }

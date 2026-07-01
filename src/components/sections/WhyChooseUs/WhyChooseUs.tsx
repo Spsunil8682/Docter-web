@@ -153,7 +153,7 @@ function FeatureIllustration({
 export function WhyChooseUs() {
   return (
     <section id="why-choose-us" className="bg-cream-50 w-full py-16 lg:py-24">
-      <Container className="flex flex-col items-center">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col items-center px-5 sm:px-8 lg:pl-[108px] lg:pr-[120px]">
         <div className="flex max-w-[952px] flex-col items-center gap-3 text-center">
           <h2 className="text-brand font-sans text-3xl font-bold tracking-[0.01em] lg:text-[40px]">
             Why Doctors Choose Us?
@@ -198,7 +198,7 @@ export function WhyChooseUs() {
             </div>
           ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

@@ -57,9 +57,9 @@ function Field({
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-cream-50 w-full py-8 lg:py-12">
+    <section id="contact" className="bg-cream-50 w-full py-8 lg:py-20">
       <Container className="flex flex-col items-center gap-10">
-        <div className="flex max-w-[785px] flex-col items-center gap-2 text-center">
+        <div className="flex max-w-[785px] flex-col items-center gap-3 text-center">
           <h2
             className="text-brand-dark font-sans text-3xl font-bold lg:text-[40px]"
             style={{ textShadow: "0px 4px 36.2px rgba(18, 90, 140, 0.15)" }}
@@ -84,7 +84,7 @@ export function Contact() {
           </div>
 
           <form
-            className="flex flex-1 flex-col gap-6 rounded-lg border border-[#C2C2C2] bg-white p-6 lg:min-h-[471px] lg:justify-center lg:px-9 lg:py-[35px]"
+            className="flex flex-1 flex-col gap-6 rounded-lg border border-[#C2C2C2] bg-cream-50 p-6 lg:min-h-[471px] lg:justify-center lg:px-9 lg:py-[33px]"
             noValidate
           >
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8">

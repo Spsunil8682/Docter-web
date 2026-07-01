@@ -76,12 +76,7 @@ function TestimonialCard({ name, credential, quote, rating, featured }: Testimon
           : "px-6 pt-5 pb-5 lg:w-[347px] lg:min-h-[190px]",
       )}
     >
-      <figcaption
-        className={cn(
-          "flex items-center gap-3",
-          featured ? "self-center" : "self-start",
-        )}
-      >
+      <figcaption className="flex items-center gap-3 self-start">
         <Image
           src={AVATAR}
           alt={`Portrait of ${name}`}
@@ -92,7 +87,7 @@ function TestimonialCard({ name, credential, quote, rating, featured }: Testimon
             featured ? "h-[68px] w-[68px]" : "h-11 w-11",
           )}
         />
-        <div className={cn("flex flex-col gap-1", featured && "items-center")}>
+        <div className="flex flex-col gap-1">
           <p
             className={cn(
               "font-sans leading-[1.5] text-[#333333]",
@@ -122,7 +117,7 @@ export function Testimonials() {
   return (
     <section id="testimonials" className="bg-cream-50 w-full py-8">
       <Container className="flex flex-col items-center gap-12">
-        <div className="flex flex-col items-center gap-2 text-center">
+        <div className="flex flex-col items-center gap-3 text-center">
           <h2
             className="text-brand-dark max-w-[808px] font-sans text-3xl font-bold lg:text-[40px]"
             style={{ textShadow: "0px 4px 36.2px rgba(18, 90, 140, 0.15)" }}
