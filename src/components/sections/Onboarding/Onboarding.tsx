@@ -167,11 +167,11 @@ export function Onboarding() {
                   aria-controls="onboarding-panel"
                   onClick={() => setActiveIndex(index)}
                   className={cn(
-                    "font-nunito cursor-pointer rounded-lg px-4 py-3 text-xl leading-6 transition-colors duration-200",
+                    "font-nunito cursor-pointer rounded-lg border px-4 py-3 text-xl leading-6 transition-colors duration-200",
                     "focus-visible:ring-brand focus-visible:ring-2 focus-visible:outline-none",
                     isActive
-                      ? "bg-brand text-white"
-                      : "border-brand/50 text-brand bg-cream-50 hover:bg-brand/5 border",
+                      ? "bg-brand border-brand text-white"
+                      : "border-brand/50 text-brand bg-cream-50 hover:bg-brand/5",
                   )}
                 >
                   {tab.label}
