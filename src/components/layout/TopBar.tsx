@@ -4,7 +4,7 @@ import { Container } from "./Container";
 
 export function TopBar() {
   return (
-    <div className="bg-ink w-full">
+    <div className="bg-ink sticky top-0 z-50 w-full">
       <Container className="relative flex flex-col items-center justify-center gap-3 py-3 text-center lg:min-h-[67px] lg:flex-row lg:gap-0 lg:py-0">
         <p className="font-sans text-base font-medium text-[#d9d9d9] lg:text-xl">
           Register Yourself As An Amrutam Doctor

@@ -67,7 +67,7 @@ export function Onboarding() {
 
   return (
     <section id="onboarding" className="bg-cream-50 w-full py-12 lg:py-10">
-      <Container className="flex flex-col gap-10 lg:gap-[38px]">
+      <div className="mx-auto flex w-full max-w-[var(--container-max)] flex-col gap-10 px-5 sm:px-8 lg:gap-[38px] lg:pl-[100px] lg:pr-0">
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-brand-dark font-sans text-3xl leading-[1.36em] font-bold tracking-[0.01em] lg:text-[40px]">
@@ -129,6 +129,7 @@ export function Onboarding() {
               return (
                 <button
                   key={tab.id}
+                  id={`onboarding-tab-${tab.id}`}
                   type="button"
                   role="tab"
                   aria-selected={isActive}
@@ -151,18 +152,27 @@ export function Onboarding() {
           <div
             id="onboarding-panel"
             role="tabpanel"
+            aria-labelledby={`onboarding-tab-${active.id}`}
             className="w-full overflow-hidden rounded-xl"
           >
-            <Image
-              key={active.id}
-              src={active.image}
-              alt={active.alt}
-              width={2480}
-              height={1120}
-              className="h-auto w-full"
-              sizes="(min-width: 1440px) 1240px, 100vw"
-              priority={false}
-            />
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+            >
+              {TABS.map((tab) => (
+                <div key={tab.id} className="w-full flex-shrink-0">
+                  <Image
+                    src={tab.image}
+                    alt={tab.alt}
+                    width={2480}
+                    height={1120}
+                    className="h-auto w-full"
+                    sizes="(min-width: 1440px) 1240px, 100vw"
+                    priority={false}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
@@ -172,7 +182,7 @@ export function Onboarding() {
             Join Now
           </Button>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }
